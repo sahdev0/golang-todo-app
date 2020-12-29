@@ -1,0 +1,36 @@
+{{ template "header" }}
+
+{{ if .Success }}
+<h2>Form saved successfully!</h2>
+{{ end }}
+
+<div class="columns">
+    <div class="column is-8">
+        <form action="/add-task" method="post">
+            <div class="field">
+                <label class="label">Title</label>
+                <div class="control">
+                    <input class="input" type="text" name="title" placeholder="Title" />
+                </div>
+            </div>
+
+            <div class="field">
+                <label class="label">Description</label>
+                <div class="control">
+                    <textarea class="textarea" name="description" placeholder="Textarea"></textarea>
+                </div>
+            </div>
+
+            <div class="field is-grouped">
+                <div class="control">
+                    <button class="button is-link">Create</button>
+                </div>
+                <div class="control">
+                    <button class="button is-link is-light">Cancel</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+{{ template "footer" }}
